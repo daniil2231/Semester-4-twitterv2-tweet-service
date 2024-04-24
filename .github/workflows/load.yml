@@ -1,0 +1,17 @@
+name: Load Test
+
+on:
+ push:
+  branches: [ "main", "dev" ]
+
+jobs:
+ artillery:
+ 
+  runs-on: self-hosted
+
+  steps:
+  - name: Checkout
+    uses: actions/checkout@v3
+  - name: Run load test
+    run: |
+     artillery run LoadTests/tweet_post.yml
