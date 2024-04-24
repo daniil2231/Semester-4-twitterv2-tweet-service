@@ -3,15 +3,15 @@ config:
   phases:
     - duration: 60
       arrivalRate: 10
-      rampTo: 15
+      rampTo: 20
       name: Warm up phase
     - duration: 60
-      arrivalRate: 20
-      rampTo: 40
+      arrivalRate: 30
+      rampTo: 80
       name: High load ramp
     - duration: 30
-      arrivalRate: 50
-      rampTo: 60
+      arrivalRate: 60
+      rampTo: 80
       name: Sustained high load
   plugins:
     ensure: {}
