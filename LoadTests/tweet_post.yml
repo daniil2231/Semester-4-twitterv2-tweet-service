@@ -1,5 +1,5 @@
 config:
-  target: http://10.101.50.174:8082
+  target: http://10.98.178.220:8082
   phases:
     - duration: 60
       arrivalRate: 10
