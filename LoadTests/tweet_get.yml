@@ -10,7 +10,7 @@ config:
       #rampTo: 80
       #name: High load ramp
     - duration: 90
-      arrivalRate: 300
+      arrivalRate: 400
       rampTo: 800
       name: Sustained high load
   plugins:
