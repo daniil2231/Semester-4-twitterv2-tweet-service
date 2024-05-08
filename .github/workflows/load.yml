@@ -12,6 +12,9 @@ jobs:
   steps:
   - name: Checkout
     uses: actions/checkout@v3
-  - name: Run load test
+  - name: Run load test posts
+    run: |
+     artillery run LoadTests/tweet_post.yml
+  - name: Run load test gets
     run: |
      artillery run LoadTests/tweet_get.yml
