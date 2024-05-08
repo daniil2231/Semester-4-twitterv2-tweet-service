@@ -1,17 +1,17 @@
 config:
   target: http://10.98.178.220:8082
   phases:
-    #- duration: 60
-     # arrivalRate: 10
-      #rampTo: 20
-      #name: Warm up phase
-    #- duration: 60
-     # arrivalRate: 30
-      #rampTo: 80
-      #name: High load ramp
-    - duration: 90
-      arrivalRate: 400
-      rampTo: 800
+    - duration: 30
+      arrivalRate: 50
+      rampTo: 150
+      name: Warm up phase
+    - duration: 30
+      arrivalRate: 200
+      rampTo: 400
+      name: High load ramp
+    - duration: 60
+      arrivalRate: 300
+      rampTo: 500
       name: Sustained high load
   plugins:
     ensure: {}
