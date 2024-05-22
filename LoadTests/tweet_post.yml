@@ -1,0 +1,32 @@
+config:
+  target: http://10.98.178.220:8082
+  phases:
+    - duration: 30
+      arrivalRate: 30
+      rampTo: 100
+      name: Warm up phase
+    - duration: 30
+      arrivalRate: 150
+      rampTo: 400
+      name: High load ramp
+    - duration: 30
+      arrivalRate: 300
+      rampTo: 400
+      name: Sustained high load
+  plugins:
+    ensure: {}
+    apdex: {}
+    http.codes: {}
+  ensure:
+      thresholds:
+        - http.response_time.p99: 100
+        - http.response_time.p95: 75
+scenarios:
+  - flow:
+    - post:
+       url: "/api/Tweet"
+       json:
+        id: ""
+        content: "test tweet"
+        tweetername: "test1"
+        likes: "0"
