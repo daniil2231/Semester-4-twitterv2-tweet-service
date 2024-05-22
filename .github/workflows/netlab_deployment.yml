@@ -5,7 +5,7 @@ on:
   branches: [ "main", "dev" ]
 
 jobs:
- deply:
+ deploy:
   runs-on: self-hosted
   steps:
   - name: Deploy updates to the NetLab Kubernetes environment
