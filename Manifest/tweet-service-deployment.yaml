@@ -29,7 +29,9 @@ spec:
           name: tweet-service
           ports:
             - containerPort: 8082
-          resources: {}
+          resources:
+            requests:
+              cpu: 10m
           imagePullPolicy: Always
       imagePullSecrets:
         - name: regcred
