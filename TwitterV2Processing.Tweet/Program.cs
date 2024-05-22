@@ -18,6 +18,7 @@ builder.Services.AddSingleton<IDatabaseSettings>(sp => sp.GetRequiredService<IOp
 
 builder.Services.AddSingleton<ITweetRepository, TweetRepository>();
 builder.Services.AddSingleton<ITweetService, TweetService>();
+builder.Services.AddHostedService<ConsumerService>();
 
 builder.Services.AddSingleton<IMongoClient>(new MongoClient(builder.Configuration.GetValue<string>("TweetDatabase:ConnectionString")));
 

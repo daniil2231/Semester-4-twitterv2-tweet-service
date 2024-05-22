@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson;
+﻿using Microsoft.AspNetCore.Mvc;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using TwitterV2Processing.Tweet.DbSettings;
 using TwitterV2Processing.Tweet.Models;
@@ -33,6 +34,11 @@ namespace TwitterV2Processing.Tweet.Persistence
         public async Task<List<TweetModel>> GetAllTweetsByUsername(string username)
         {
             return await _tweets.Find<TweetModel>(tweet => tweet.Tweetername == username).ToListAsync();
+        }
+
+        public async Task<DeleteResult> DeleteTweetsByUser(string username)
+        {
+            return await _tweets.DeleteManyAsync(tweet => tweet.Tweetername.Equals(username));
         }
     }
 }
