@@ -10,4 +10,4 @@ jobs:
   steps:
   - name: Deploy updates to the NetLab Kubernetes environment
     run: |
-     minikube kubectl -- apply -f ./Manifest/
+     minikube kubectl -- apply -f Manifest/
