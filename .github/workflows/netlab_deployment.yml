@@ -5,9 +5,9 @@ on:
   branches: [ "main", "dev" ]
 
 jobs:
- deply:
+ deploy:
   runs-on: self-hosted
   steps:
   - name: Deploy updates to the NetLab Kubernetes environment
     run: |
-     minikube kubectl -- apply -f ./Manifest/
+     minikube kubectl -- apply -f Manifest/
